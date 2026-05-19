@@ -13,12 +13,59 @@
 <meta property="og:url"t.me">
 <meta property="og:type" content="website">
 
+    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Viewer</title>
 
-<title>Redirecting...</title>
+<style>
+body{
+  margin:0;
+  background:#000;
+}
 
-<!-- Actual Redirect (User clicks → goes to another link) -->
+img{
+  width:100%;
+  height:100vh;
+  object-fit:cover;
+  cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<img id="photo" src="1.jpg">
+
 <script>
-    window.location.href = "https://sitefleck.com/qwpmezpg?key=ff4552c4f5069bba65ae8a584a919868";
+
+const nextImages = [
+  "2.jpg",
+  "3.jpg",
+  "4.jpg"
+];
+
+const sponsorLinks = [
+  "https://example.com/ad1",
+  "https://example.com/ad2",
+  "https://example.com/ad3"
+];
+
+let i = 0;
+
+document.getElementById("photo").onclick = () => {
+
+  // Open next image
+  window.open(nextImages[i], "_blank");
+
+  // Move current page to sponsor/ad
+  window.location.href = sponsorLinks[i];
+
+  i++;
+
+  if(i >= nextImages.length){
+    i = 0;
+  }
+};
+
 </script>
 
 </head>
